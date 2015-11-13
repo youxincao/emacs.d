@@ -1,5 +1,12 @@
 ;; -*- coding: utf-8 -*-
 
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (setq emacs-load-start-time (current-time))
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 
@@ -59,7 +66,7 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
 (require 'init-frame-hooks)
 ;; any file use flyspell should be initialized after init-spelling.el
 ;; actually, I don't know which major-mode use flyspell.
-(require 'init-spelling)
+;; (require 'init-spelling)
 (require 'init-xterm)
 (require 'init-gui-frames)
 (require 'init-ido)
@@ -85,7 +92,7 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
 (require 'init-ruby-mode)
 (require 'init-lisp)
 (require 'init-elisp)
-(require 'init-yasnippet)
+;; (require 'init-yasnippet)
 ;; Use bookmark instead
 (require 'init-zencoding-mode)
 (require 'init-cc-mode)
@@ -149,24 +156,25 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
 
 ;; my personal setup, other major-mode specific setup need it.
 ;; It's dependent on init-site-lisp.el
-(if (file-exists-p "~/.custom.el") (load-file "~/.custom.el"))
+(if (file-exists-p "~/.emacs.d/custom.el") (load-file "~/.emacs.d/custom.el"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("0c49a9e22e333f260126e4a48539a7ad6e8209ddda13c0310c8811094295b3a3" default)))
+ '(column-number-mode t)
+ '(display-time-mode t)
  '(git-gutter:handled-backends (quote (svn hg git)))
  '(safe-local-variable-values (quote ((lentic-init . lentic-orgel-org-init))))
- '(session-use-package t nil (session)))
+ '(session-use-package t nil (session))
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Consolas" :foundry "outline" :slant normal :weight normal :height 120 :width normal))))
  '(window-numbering-face ((t (:foreground "DeepPink" :underline "DeepPink" :weight bold))) t))
 ;;; Local Variables:
 ;;; no-byte-compile: t

@@ -1,4 +1,27 @@
-(windmove-default-keybindings 'meta)
+(setq inferior-js-mode-hook
+      (lambda ()
+        ;; We like nice colors
+        (ansi-color-for-comint-mode-on)
+        ;; Deal with some prompt nonsense
+        (add-to-list
+         'comint-preoutput-filter-functions
+         (lambda (output)
+           (replace-regexp-in-string "\033\\[[0-9]+[GKCJ]" "" output)))))
+(defun js2-evel-cur-buffer()
+      (interactive)
+      (shell-command-on-region (point-min) (point-max) "node"))
+
+(add-hook 'js2-mode-hook '(lambda ()
+                           (local-set-key "\C-x\C-e" 'eval-last-sexp)
+                           (local-set-key "\C-cb" 'js-send-buffer)
+                           (local-set-key "\C-c\C-b" 'js-send-buffer-and-go)
+                           (local-set-key "\C-cl" 'js-load-file-and-go)
+                           (local-set-key "\C-c!" 'run-js)
+                           (local-set-key "\C-c\C-r" 'js-send-region)
+                           (local-set-key "\C-c\C-j" 'js-send-line)
+                           (local-set-key "\C-c\C-u" 'whitespace-clean-and-compile)
+                           (local-set-key "\C-c\C-c" 'js2-evel-cur-buffer)
+                           ))
 
 (defun duplicate-current-line-or-region (arg)
   "Duplicates the current line or region ARG times.
