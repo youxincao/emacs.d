@@ -63,4 +63,10 @@ there's a region, all lines that region covers will be duplicated."
 (setq projectile-completion-system 'helm)
 (helm-projectile-on)
 (global-unset-key "\C-cp")
-(global-set-key (kbd "C-c m") 'evilnc-comment-or-uncomment-paragraph)
+(global-set-key (kbd "C-c m") 'evilnc-comment-or-uncomment-paragraphs)
+
+(require-package 'anzu)
+(global-anzu-mode +1)
+(global-set-key (kbd "M-%") 'anzu-query-replace)
+(global-set-key (kbd "C-M-%") 'anzu-query-replace-regexp)
+(global-set-key (kbd "C-c a") 'anzu-query-replace-at-cursor)
