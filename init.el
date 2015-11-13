@@ -128,7 +128,7 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
 (require 'init-emacs-w3m)
 
 (if *win32*
-    (require 'init-windows))
+    (require 'init-windows-config))
 ;; {{ idle require other stuff
 (setq idle-require-idle-delay 3)
 (setq idle-require-symbols '(init-misc-lazy
