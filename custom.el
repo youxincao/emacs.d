@@ -44,3 +44,23 @@ there's a region, all lines that region covers will be duplicated."
       (goto-char (+ origin (* (length region) arg) arg)))))
 
 (global-set-key (kbd "C-c d") 'duplicate-current-line-or-region)
+;; for magit
+(require-package 'magit)
+
+;; for grizzl
+;;(require-package 'grizzl)
+
+;; for helm
+(require-package 'helm)
+(require-package 'helm-projectile)
+
+;; for projectile
+(require-package 'projectile)
+(projectile-global-mode)
+(if *win32*
+    (setq projectile-indexing-method 'alien))
+(setq projectile-enable-caching t)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+(global-unset-key "\C-cp")
+(global-set-key (kbd "C-c m") 'evilnc-comment-or-uncomment-paragraph)

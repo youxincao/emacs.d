@@ -168,6 +168,9 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
  '(column-number-mode t)
  '(display-time-mode t)
  '(git-gutter:handled-backends (quote (svn hg git)))
+ '(package-selected-packages
+   (quote
+    (helm-projectile helm grizzl projectile magit yaml-mode yagist writeroom-mode wgrep w3m unfill textile-mode tagedit string-edit simple-httpd session scss-mode scratch sass-mode rvm robe rinari regex-tool rainbow-delimiters quack pomodoro pointback paredit page-break-lines neotree mwe-log-commands multiple-cursors multi-term move-text markdown-mode lua-mode link less-css-mode legalese js2-mode idomenu ibuffer-vc htmlize hl-sexp haskell-mode guide-key groovy-mode gitignore-mode gitconfig-mode git-timemachine git-messenger git-link git-gutter ggtags fringe-helper flyspell-lazy flymake-sass flymake-ruby flymake-lua flymake-jslint flymake-css flymake-coffee flx-ido fakir expand-region exec-path-from-shell erlang emmet-mode elpy dsvn dropdown-list dired-details dired+ diminish dictionary define-word csharp-mode crontab-mode cpputils-cmake connection company-c-headers color-theme coffee-mode cmake-mode cliphist buffer-move bookmark+ bbdb auto-compile ace-window)))
  '(safe-local-variable-values (quote ((lentic-init . lentic-orgel-org-init))))
  '(session-use-package t nil (session))
  '(tool-bar-mode nil))
