@@ -165,6 +165,10 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(anzu-deactivate-region t)
+ '(anzu-mode-lighter "")
+ '(anzu-replace-to-string-separator " => ")
+ '(anzu-search-threshold 1000)
  '(column-number-mode t)
  '(display-time-mode t)
  '(git-gutter:handled-backends (quote (svn hg git)))
@@ -177,3 +181,10 @@ We increase this to 16MB by `(my-optimize-gc 16 0.5)` "
 ;;; no-byte-compile: t
 ;;; End:
 (put 'erase-buffer 'disabled nil)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (:family "Inconsolata for Powerline" :foundry "unknown" :slant normal :weight normal :height 158 :width normal))))
+ '(window-numbering-face ((t (:foreground "DeepPink" :underline "DeepPink" :weight bold))) t))
