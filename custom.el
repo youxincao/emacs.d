@@ -87,3 +87,8 @@ there's a region, all lines that region covers will be duplicated."
 (global-set-key (kbd "C-c C-<right>") 'windmove-right)
 (global-set-key (kbd "C-c C-<up>") 'windmove-up)
 (global-set-key (kbd "C-c C-<down>") 'windmove-down)
+
+(require-package 'nodejs-repl)
+(add-to-list 'load-path
+             "~/.emacs.d/lib")
+(require 'nodejs-repl-eval)
