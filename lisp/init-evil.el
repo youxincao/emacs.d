@@ -306,6 +306,8 @@
 (global-set-key (kbd "C-r") 'undo-tree-redo)
 
 ;; My frequently used commands are listed here
+;; For example, for line like `"ef" 'end-of-defun`
+;;   You can either press `,ef` or `M-x end-of-defun` to execute it
 (setq evil-leader/leader ",")
 (require 'evil-leader)
 (evil-leader/set-key
@@ -351,6 +353,7 @@
   "ff" 'toggle-full-window ;; I use WIN+F in i3
   "ip" 'find-file-in-project
   "kk" 'find-file-in-project-by-selected
+  "dd" 'find-directory-in-project-by-selected
   "tm" 'get-term
   "tff" 'toggle-frame-fullscreen
   "tfm" 'toggle-frame-maximized
